@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 id="result"></h3>
+    <script>
+        let string = prompt('nhập vào một chuỗi: ')
+        let arr = string.split('');
+        let total;
+        
+        function find(arr){
+            let arr_2 = ['a', 'o', 'e', 'u', 'i'];
+            let count = 0;
+            for (let i = 0; i < arr_2.length; i++){
+                for (let j = 0; j < arr.length; j++){
+                    if (arr_2[i] == arr[j]){
+                        count++;
+                    }
+                }
+            }
+            if (count == 0) {
+                return false
+            } else {
+                total = count;
+                return true;
+            }
+        }
+        
+        if (find(arr) == true) {
+            document.getElementById("result").innerHTML = 'số nguyên âm trong chuỗi vừa nhập vào là: ' + total;
+        } else {
+            document.getElementById("result").innerHTML = 'không có ký tự nguyên âm nào trong chuỗi vừa nhập vào';
+        }
+    </script>
+  </body>
+</html>
